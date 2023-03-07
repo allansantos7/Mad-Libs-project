@@ -1,0 +1,21 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>J.R.R. TOLKIEN</h1>
+    {% with tolkien_list|first as first_object %}
+        <p>J.R.R. Tolkien has been thrust into the {{ first_object.Tolkien_fruit1 }} -light yet again with the release of </p>
+        <p>his famous trilogy Lord of the {{ first_object.Tolkien_noun1 }} as a {{ first_object.Tolkien_noun2 }} series. The </p>
+        <p>three books, {{ first_object.Tolkien_noun3 }} of the Ring, The Two {{ first_object.Tolkien_noun4 }}, and Return of </p>
+        <p>the {{ first_object.Tolkien_noun5 }}, are preceded by another book The {{ first_object.Tolkien_word1 }}, which </p>
+        <p>may also be filmed later on.</p>
+    {% endwith %}
+</body>
+</html>

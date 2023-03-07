@@ -1,0 +1,20 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>KATIE`S KAPERS</h1>
+    {% with katie_list|first as first_object %}
+        <p>I was {{ first_object.Katie_verb1 }} down the hallway and some {{ first_object.Katie_noun1 }} grabbed </p>
+        <p>my {{ first_object.Katie_part1 }}, and I turned to him and said "so help me, if </p>
+        <p>you {{ first_object.Katie_verb2 }} me again {{ first_object.Katie_adj1 }} you will go the way of the {{ first_object.Katie_animal1 }}." </p>
+        <p>And then he {{ first_object.Katie_verb3 }} away.</p>
+    {% endwith %}
+</body>
+</html>

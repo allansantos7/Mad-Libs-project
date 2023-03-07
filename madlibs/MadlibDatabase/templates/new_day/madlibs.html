@@ -1,0 +1,23 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>THE NEW DAY</h1>
+    {% with new_day_list|first as first_object %}
+        <p>Tommorrow is a new day full of new suprises and new adventures.</p>
+        <p>Such as {{ first_object.NewDay_verb1 }} and {{ first_object.NewDay_verb2 }}. Tommorrow leads you to the life </p>
+        <p>you haven`t {{ first_object.NewDay_verb3 }} yet. So why not plan to live today with the most </p>
+        <p>adventurious and positive outlook. Because today is yesterday`s tommorrow and we all know </p>
+        <p>that it`s good to do things differently. So let`s go </p>
+        <p>to {{ first_object.NewDay_place1 }} and {{ first_object.NewDay_verb4 }} with someone {{ first_object.NewDay_adj1 }}. Or you could just let </p>
+        <p>it {{ first_object.NewDay_verb5 }} right by.</p>
+    {% endwith %}
+</body>
+</html>

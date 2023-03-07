@@ -1,0 +1,21 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SICK NOTE</h1>
+    {% with sick_note_list|first as first_object %}
+        <p>Dear School Nurse:</p>
+        <p>{{ first_object.SickNote_word1 }} {{ first_object.SickNote_name1 }} will not be attending school today.</p>
+        <p>He/she has come down with a case of {{ first_object.SickNote_illness1 }} and</p>
+        <p>has horrible {{ first_object.SickNote_noun_plural1 }} and a/an {{ first_object.SickNote_adj1 }} fever. </p>
+        <p>We have made an appointment with the {{ first_object.SickNote_adj2 }} Dr. {{ first_object.SickNote_word2 }}.</p>
+    {% endwith %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>THREE BLIND MICE</h1>
+    {% with blind_mice_list|first as first_object %}
+        <p>{{ first_object.BlindMice_number1 }} {{ first_object.BlindMice_adj1 }} mice! </p>
+        <p>They all ran after the {{ first_object.BlindMice_job1 }}`s {{ first_object.BlindMice_relation1 }},</p>
+        <p>Who cut off their {{ first_object.BlindMice_part1 }} with a {{ first_object.BlindMice_verb1 }} knife.</p>
+        <p>Did you ever see such a thing in your {{ first_object.BlindMice_noun1 }}</p>
+        <p>As {{ first_object.BlindMice_number1 }} {{ first_object.BlindMice_adj1 }} mice?</p>
+    {% endwith %}
+</body>
+</html>

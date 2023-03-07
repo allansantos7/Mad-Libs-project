@@ -1,0 +1,20 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>THE INDUSTRY`S MOST HIGHLY AWARDED...</h1>
+    {% with industry_award_list|first as first_object %}
+        <p>Without doubt {{ first_object.IndustryAward_company1 }} has left its {{ first_object.IndustryAward_noun1 }} with us as some of </p>
+        <p>the most {{ first_object.IndustryAward_adj1 }} {{ first_object.IndustryAward_noun2 }} on the {{ first_object.IndustryAward_noun3 }}... </p>
+        <p>This {{ first_object.IndustryAward_noun2 }} that we highly recommend </p>
+        <p>for {{ first_object.IndustryAward_adj2 }} {{ first_object.IndustryAward_noun4 }}</p>
+    {% endwith %}
+</body>
+</html>

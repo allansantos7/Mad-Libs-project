@@ -1,0 +1,25 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Be Kind</h1>
+    <p>
+        {% with be_kind_list|first as first_object %}
+            <p>Be kind to your {{ first_object.BeKind_noun1 }}-footed {{ first_object.BeKind_noun_plural1 }}.</p>
+            <p>For a duck may be somebody's {{ first_object.BeKind_noun2 }},</p>
+            <p>Be kind to your {{ first_object.BeKind_noun_plural1 }} in {{ first_object.BeKind_place1 }}.</p>
+            <p>Where the weather is always  {{ first_object.BeKind_adj1 }}.</p>
+            <p>You may think that this is the  {{ first_object.BeKind_noun3 }},</p>
+            <p>Well it is  {{ first_object.BeKind_adj2 }}.</p>
+        {% endwith %}
+    </p>
+
+</body>
+</html>

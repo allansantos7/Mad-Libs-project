@@ -1,0 +1,21 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>VALENTINE`S CARDS</h1>
+    {% with valentine_list|first as first_object %}
+        <p>Be my {{ first_object.Valentine_noun1 }}</p>
+        <p>{{ first_object.Valentine_noun2 }} make the world go {{ first_object.Valentine_adj1 }}</p>
+        <p>Pickachu says "I {{ first_object.Valentine_verb1 }} you"</p>
+        <p>I love {{ first_object.Valentine_noun3 }}, {{ first_object.Valentine_color1 }} does too</p>
+        <p>You make my {{ first_object.Valentine_part1 }} flutter</p>
+    {% endwith %}
+</body>
+</html>

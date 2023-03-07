@@ -1,0 +1,22 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>THE CAT AND THE FIDDLE</h1>
+    {% with cat_fiddle_list|first as first_object %}
+        <p>Hey, {{ first_object.CatFiddle_word1 }}, {{ first_object.CatFiddle_word1 }}!</p>
+        <p>The {{ first_object.CatFiddle_animal1 }} and the {{ first_object.CatFiddle_instrument1 }},</p>
+        <p>The cow jumped over the {{ first_object.CatFiddle_noun1 }};</p>
+        <p>The {{ first_object.CatFiddle_adj1 }} dog laughed</p>
+        <p>To see such sport,</p>
+        <p>And the {{ first_object.CatFiddle_noun2 }} ran away with the {{ first_object.CatFiddle_adj2 }} spoon.</p>
+    {% endwith %}
+</body>
+</html>

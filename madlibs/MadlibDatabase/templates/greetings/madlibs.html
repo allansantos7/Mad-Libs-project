@@ -1,0 +1,21 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>GREETINGS, EARTHLINGS!</h1>
+    {% with greetings_list|first as first_object %}
+        <p>In the book War of the {{ first_object.Greetings_noun_plural1 }}, </p>
+        <p>the main character is an anonymous {{ first_object.Greetings_occupation1 }}</p>
+        <p>who records the arrival of {{ first_object.Greetings_animal_plural1 }} in {{ first_object.Greetings_place1 }}.</p>
+        <p>Needless to say, havoc reigns as the {{ first_object.Greetings_animal_plural1 }} continue to {{ first_object.Greetings_animal_verb1 }}</p>
+        <p>everything in sight, until they are killed by the {{ first_object.Greetings_adj1 }} {{ first_object.Greetings_noun1 }}.</p>
+    {% endwith %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+body {
+    background-color: greenyellow;
+    text-align: center;
+}
+
+ul {
+    display: table;
+    margin: auto;
+}
+
+h1 {
+    font-family: "Bookman Old Style";
+    font-style: italic;
+}
+
+p {
+    font-family: "Comic Sans MS";
+}
+
+.nav-item {
+    color: aqua;
+}
+
+.nav-item:hover {
+    color: yellow;
+}
+
+form {
+    font-family: "MV Boli";
+}
+
+table {
+    margin: auto;
+}
+
+.navbar-nav {
+    display: flex;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

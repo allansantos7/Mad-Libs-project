@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+{% block body %}
     <h1>VALENTINE`S CARDS</h1>
     {% with valentine_list|first as first_object %}
         <p>Be my {{ first_object.Valentine_noun1 }}</p>
@@ -17,5 +18,7 @@
         <p>I love {{ first_object.Valentine_noun3 }}, {{ first_object.Valentine_color1 }} does too</p>
         <p>You make my {{ first_object.Valentine_part1 }} flutter</p>
     {% endwith %}
+    <a href="{% url 'valentine_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
 </body>
 </html>

@@ -4,7 +4,7 @@ from .models import BeKind, SickNote, Greetings, CatFiddle, Katie, NewDay, Indus
 from .models import Yankee, Fortune, Pizza, Baseball, VideoGame
 from django.template import loader
 from .forms import BeKindForm, SickNoteForm, GreetingsForm, CatFiddleForm, KatieForm, NewDayForm, IndustryAwardForm
-from .forms import TolkienForm, BlindMiceForm, ValentineForm
+from .forms import TolkienForm, BlindMiceForm, ValentineForm, YankeeForm, FortuneForm, PizzaForm, BaseballForm, VideoGameForm
 
 
 # Create your views here.
@@ -220,6 +220,17 @@ def yankee(request):
     return render(request, 'yankee/madlibs.html', context)
 
 
+def yankee_form(request):
+    Yankee.objects.all().delete()
+    form = YankeeForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('yankee')
+
+    return render(request, 'yankee/form.html', {'form': form})
+
+
 def fortune(request):
     fortune_list = Fortune.objects.all()
 
@@ -227,6 +238,17 @@ def fortune(request):
         'fortune_list': fortune_list,
     }
     return render(request, 'fortune/madlibs.html', context)
+
+
+def fortune_form(request):
+    Fortune.objects.all().delete()
+    form = FortuneForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('fortune')
+
+    return render(request, 'fortune/form.html', {'form': form})
 
 
 def pizza(request):
@@ -238,6 +260,17 @@ def pizza(request):
     return render(request, 'pizza/madlibs.html', context)
 
 
+def pizza_form(request):
+    Pizza.objects.all().delete()
+    form = PizzaForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('pizza')
+
+    return render(request, 'pizza/form.html', {'form': form})
+
+
 def baseball(request):
     baseball_list = Baseball.objects.all()
 
@@ -247,6 +280,17 @@ def baseball(request):
     return render(request, 'baseball/madlibs.html', context)
 
 
+def baseball_form(request):
+    Baseball.objects.all().delete()
+    form = BaseballForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('baseball')
+
+    return render(request, 'baseball/form.html', {'form': form})
+
+
 def video_game(request):
     video_game_list = VideoGame.objects.all()
 
@@ -254,5 +298,16 @@ def video_game(request):
         'video_game_list': video_game_list,
     }
     return render(request, 'video_game/madlibs.html', context)
+
+
+def video_game_form(request):
+    VideoGame.objects.all().delete()
+    form = VideoGameForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('video_game')
+
+    return render(request, 'video_game/form.html', {'form': form})
 
 

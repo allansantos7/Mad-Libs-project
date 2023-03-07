@@ -1,5 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
 <form method="POST">
     {% csrf_token %}
-    {{ form }}
+    <table>
+        {{ form }}
+    </table>
     <button type="submit">Show my Madlib!</button>
 </form>
+{% endblock %}

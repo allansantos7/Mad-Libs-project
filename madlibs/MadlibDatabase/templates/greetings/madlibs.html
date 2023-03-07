@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+{% block body %}
     <h1>GREETINGS, EARTHLINGS!</h1>
     {% with greetings_list|first as first_object %}
         <p>In the book War of the {{ first_object.Greetings_noun_plural1 }}, </p>
@@ -17,5 +18,7 @@
         <p>Needless to say, havoc reigns as the {{ first_object.Greetings_animal_plural1 }} continue to {{ first_object.Greetings_animal_verb1 }}</p>
         <p>everything in sight, until they are killed by the {{ first_object.Greetings_adj1 }} {{ first_object.Greetings_noun1 }}.</p>
     {% endwith %}
+    <a href="{% url 'greetings_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
 </body>
 </html>

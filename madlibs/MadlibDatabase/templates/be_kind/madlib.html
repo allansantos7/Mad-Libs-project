@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,17 +9,17 @@
     <title>Document</title>
 </head>
 <body>
+{% block body %}
     <h1>Be Kind</h1>
-    <p>
-        {% with be_kind_list|first as first_object %}
-            <p>Be kind to your {{ first_object.BeKind_noun1 }}-footed {{ first_object.BeKind_noun_plural1 }}.</p>
-            <p>For a duck may be somebody's {{ first_object.BeKind_noun2 }},</p>
-            <p>Be kind to your {{ first_object.BeKind_noun_plural1 }} in {{ first_object.BeKind_place1 }}.</p>
-            <p>Where the weather is always  {{ first_object.BeKind_adj1 }}.</p>
-            <p>You may think that this is the  {{ first_object.BeKind_noun3 }},</p>
-            <p>Well it is  {{ first_object.BeKind_adj2 }}.</p>
-        {% endwith %}
-    </p>
-
+    {% with be_kind_list|first as first_object %}
+        <p>Be kind to your {{ first_object.BeKind_noun1 }}-footed {{ first_object.BeKind_noun_plural1 }}.</p>
+        <p>For a duck may be somebody's {{ first_object.BeKind_noun2 }},</p>
+        <p>Be kind to your {{ first_object.BeKind_noun_plural1 }} in {{ first_object.BeKind_place1 }}.</p>
+        <p>Where the weather is always  {{ first_object.BeKind_adj1 }}.</p>
+        <p>You may think that this is the  {{ first_object.BeKind_noun3 }},</p>
+        <p>Well it is  {{ first_object.BeKind_adj2 }}.</p>
+    {% endwith %}
+    <a href="{% url 'be_kind_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
 </body>
 </html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{% block body %}
+    <h1>YANKEE DOODLE</h1>
+    {% with yankee_list|first as first_object %}
+        <p>Yankee Doodle went to {{ first_object.Yankee_noun1 }}, a- {{ first_object.Yankee_verb1 }} on </p>
+        <p>a {{ first_object.Yankee_animal1 }};</p>
+        <p>Stuck a feather in his {{ first_object.Yankee_clothing1 }} and called it {{ first_object.Yankee_noun2 }}.</p>
+        <p>Yankee Doodle keep it up, Yankee Doodle {{ first_object.Yankee_adj1 }},</p>
+        <p>Mind the {{ first_object.Yankee_noun3 }} and the step and with the {{ first_object.Yankee_noun4 }} be handy.</p>
+    {% endwith %}
+    <a href="{% url 'yankee_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
+</body>
+</html>

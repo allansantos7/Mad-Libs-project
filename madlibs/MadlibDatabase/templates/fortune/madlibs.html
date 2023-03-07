@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{% block body %}
+    <h1>FORTUNE COOKIES</h1>
+    {% with fortune_list|first as first_object %}
+        <p>- While anyone can {{ first_object.Fortune_verb1 }} to themselves they were {{ first_object.Fortune_adj1 }}, the </p>
+        <p>true test is admission to someone else.</p>
+        <p>- Faults are {{ first_object.Fortune_adj2 }} where {{ first_object.Fortune_noun1 }} is thin.</p>
+        <p>- The only real way to look {{ first_object.Fortune_adj3 }} is not to be {{ first_object.Fortune_verb2 }} so soon.</p>
+        <p>- Always try to do things in chronological {{ first_object.Fortune_noun2 }}.</p>
+    {% endwith %}
+    <a href="{% url 'fortune_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
+</body>
+</html>

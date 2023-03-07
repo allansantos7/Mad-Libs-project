@@ -71,3 +71,38 @@ class ValentineForm(forms.ModelForm):
         model = Valentine
         fields = ['Valentine_noun1', 'Valentine_noun2', 'Valentine_noun3', 'Valentine_adj1',
                   'Valentine_verb1', 'Valentine_color1', 'Valentine_part1']
+
+
+class YankeeForm(forms.ModelForm):
+    class Meta:
+        model = Yankee
+        fields = ['Yankee_noun1', 'Yankee_noun2', 'Yankee_noun3', 'Yankee_noun4',
+                  'Yankee_verb1', 'Yankee_animal1', 'Yankee_clothing1', 'Yankee_adj1']
+
+
+class FortuneForm(forms.ModelForm):
+    class Meta:
+        model = Fortune
+        fields = ['Fortune_verb1', 'Fortune_verb2', 'Fortune_adj1', 'Fortune_adj2',
+                  'Fortune_adj3', 'Fortune_noun1', 'Fortune_noun2']
+
+
+class PizzaForm(forms.ModelForm):
+    class Meta:
+        model = Pizza
+        fields = ['Pizza_name1', 'Pizza_adj1', 'Pizza_adj2', 'Pizza_noun1',
+                  'Pizza_noun2', 'Pizza_noun3', 'Pizza_verb1']
+
+
+class BaseballForm(forms.ModelForm):
+    class Meta:
+        model = Baseball
+        fields = ['Baseball_noun1', 'Baseball_noun2', 'Baseball_verb1', 'Baseball_verb2',
+                  'Baseball_job1', 'Baseball_number1', 'Baseball_loc1']
+
+
+class VideoGameForm(forms.ModelForm):
+    class Meta:
+        model = VideoGame
+        fields = ['VideoGame_adj1', 'VideoGame_adj2', 'VideoGame_name1', 'VideoGame_job1',
+                  'VideoGame_verb1', 'VideoGame_noun1', 'VideoGame_noun2']

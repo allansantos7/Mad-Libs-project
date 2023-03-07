@@ -36,8 +36,18 @@ urlpatterns = [
     path('valentine_form/', views.valentine_form, name="valentine_form"),
 
     path('yankee/', views.yankee, name="yankee"),
+    path('yankee_form/', views.yankee_form, name="yankee_form"),
+
     path('fortune/', views.fortune, name="fortune"),
+    path('fortune_form/', views.fortune_form, name="fortune_form"),
+
     path('pizza/', views.pizza, name="pizza"),
+    path('pizza_form/', views.pizza_form, name="pizza_form"),
+
+
     path('baseball/', views.baseball, name="baseball"),
+    path('baseball_form/', views.baseball_form, name="baseball_form"),
+
     path('video_game/', views.video_game, name="video_game"),
+    path('video_game_form/', views.video_game_form, name="video_game_form"),
 ]

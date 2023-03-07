@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+{% block body %}
     <h1>THE CAT AND THE FIDDLE</h1>
     {% with cat_fiddle_list|first as first_object %}
         <p>Hey, {{ first_object.CatFiddle_word1 }}, {{ first_object.CatFiddle_word1 }}!</p>
@@ -18,5 +19,7 @@
         <p>To see such sport,</p>
         <p>And the {{ first_object.CatFiddle_noun2 }} ran away with the {{ first_object.CatFiddle_adj2 }} spoon.</p>
     {% endwith %}
+    <a href="{% url 'cat_fiddle_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
 </body>
 </html>

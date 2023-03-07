@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+{% block body %}
     <h1>THE NEW DAY</h1>
     {% with new_day_list|first as first_object %}
         <p>Tommorrow is a new day full of new suprises and new adventures.</p>
@@ -19,5 +20,7 @@
         <p>to {{ first_object.NewDay_place1 }} and {{ first_object.NewDay_verb4 }} with someone {{ first_object.NewDay_adj1 }}. Or you could just let </p>
         <p>it {{ first_object.NewDay_verb5 }} right by.</p>
     {% endwith %}
+    <a href="{% url 'new_day_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
 </body>
 </html>

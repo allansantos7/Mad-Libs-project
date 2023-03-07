@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+{% block body %}
     <h1>THE INDUSTRY`S MOST HIGHLY AWARDED...</h1>
     {% with industry_award_list|first as first_object %}
         <p>Without doubt {{ first_object.IndustryAward_company1 }} has left its {{ first_object.IndustryAward_noun1 }} with us as some of </p>
@@ -16,5 +17,7 @@
         <p>This {{ first_object.IndustryAward_noun2 }} that we highly recommend </p>
         <p>for {{ first_object.IndustryAward_adj2 }} {{ first_object.IndustryAward_noun4 }}</p>
     {% endwith %}
+    <a href="{% url 'industry_award_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
 </body>
 </html>

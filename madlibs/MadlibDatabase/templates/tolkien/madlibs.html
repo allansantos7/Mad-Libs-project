@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+{% block body %}
     <h1>J.R.R. TOLKIEN</h1>
     {% with tolkien_list|first as first_object %}
         <p>J.R.R. Tolkien has been thrust into the {{ first_object.Tolkien_fruit1 }} -light yet again with the release of </p>
@@ -17,5 +18,7 @@
         <p>the {{ first_object.Tolkien_noun5 }}, are preceded by another book The {{ first_object.Tolkien_word1 }}, which </p>
         <p>may also be filmed later on.</p>
     {% endwith %}
+    <a href="{% url 'tolkien_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
 </body>
 </html>

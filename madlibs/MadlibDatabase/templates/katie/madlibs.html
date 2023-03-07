@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+{% block body %}
     <h1>KATIE`S KAPERS</h1>
     {% with katie_list|first as first_object %}
         <p>I was {{ first_object.Katie_verb1 }} down the hallway and some {{ first_object.Katie_noun1 }} grabbed </p>
@@ -16,5 +17,7 @@
         <p>you {{ first_object.Katie_verb2 }} me again {{ first_object.Katie_adj1 }} you will go the way of the {{ first_object.Katie_animal1 }}." </p>
         <p>And then he {{ first_object.Katie_verb3 }} away.</p>
     {% endwith %}
+    <a href="{% url 'katie_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
 </body>
 </html>

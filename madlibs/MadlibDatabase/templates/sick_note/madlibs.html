@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@
     <title>Document</title>
 </head>
 <body>
+{% block body %}
     <h1>SICK NOTE</h1>
     {% with sick_note_list|first as first_object %}
         <p>Dear School Nurse:</p>
@@ -17,5 +18,7 @@
         <p>has horrible {{ first_object.SickNote_noun_plural1 }} and a/an {{ first_object.SickNote_adj1 }} fever. </p>
         <p>We have made an appointment with the {{ first_object.SickNote_adj2 }} Dr. {{ first_object.SickNote_word2 }}.</p>
     {% endwith %}
+    <a href="{% url 'sick_note_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
 </body>
 </html>

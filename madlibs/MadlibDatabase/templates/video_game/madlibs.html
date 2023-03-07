@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{% block body %}
+    <h1>POPULAR VIDEO GAME</h1>
+    {% with video_game_list|first as first_object %}
+        <p>{{ first_object.VideoGame_adj1 }} {{ first_object.VideoGame_name1 }} Brothers is a popular video game where you </p>
+        <p>control a/an {{ first_object.VideoGame_job1 }} as he/she runs through levels {{ first_object.VideoGame_verb1 }} on </p>
+        <p>enemies and eating {{ first_object.VideoGame_noun1 }} to get {{ first_object.VideoGame_adj2 }} and fireflowers so </p>
+        <p>he/she can throw {{ first_object.VideoGame_noun2 }} at enemies..</p>
+    {% endwith %}
+    <a href="{% url 'video_game_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
+</body>
+</html>

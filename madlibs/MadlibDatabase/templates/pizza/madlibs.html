@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{% block body %}
+    <h1>PIZZA PARLOR</h1>
+    {% with pizza_list|first as first_object %}
+        <p>Come on over to {{ first_object.Pizza_name1 }}`s Pizza Parlor where you can enjoy you </p>
+        <p>favorite {{ first_object.Pizza_adj1 }}-dish pizza`s. You can try our famous {{ first_object.Pizza_noun1 }}</p>
+        <p>lovers pizza, or select from our list of {{ first_object.Pizza_adj2 }} toppings, including </p>
+        <p>sauteed {{ first_object.Pizza_noun2 }}, {{ first_object.Pizza_noun3 }}, and many more. Our crusts are </p>
+        <p>hand-{{ first_object.Pizza_verb1 }}</p>
+    {% endwith %}
+    <a href="{% url 'pizza_form' %}"><button type="reset">Do Over</button></a>
+{% endblock %}
+</body>
+</html>

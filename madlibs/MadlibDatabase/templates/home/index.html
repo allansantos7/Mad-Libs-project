@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,6 +9,13 @@
     <title>Document</title>
 </head>
 <body>
+{% block body %}
     <h1>Welcome to Madlibs!</h1>
+    <h2>Instructions:</h2>
+    <ul>
+        <li>Click any of the links located in the navigation bar and enter an appropriate word for each field.</li>
+        <li>Click the button at the bottom of the page and watch the magic happen!</li>
+    </ul>
+{% endblock %}
 </body>
 </html>
